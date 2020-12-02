@@ -8,6 +8,7 @@ function Home({todos, addTodo}) {
   function onChange(e) {
     setText(e.target.value);
   }
+
   function onSubmit(e) {
     e.preventDefault();
     setText("");
