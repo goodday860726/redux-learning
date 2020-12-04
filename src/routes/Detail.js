@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-import { actionCreators } from '../store';
+import { remove } from '../store';
 
 function Detail({todo, delTodo}) {
   return (
@@ -22,7 +22,7 @@ function mapStateToPorps(state, ownProps) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   const { match: {params: { id }}} = ownProps
-  return { delTodo: () => dispatch(actionCreators.deleteTodo(id)) };
+  return { delTodo: () => dispatch(remove(id)) };
 }
 
 export default connect (mapStateToPorps,mapDispatchToProps) (Detail);
